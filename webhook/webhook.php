@@ -81,7 +81,7 @@ fclose($input);*/
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => "{\r\n\r\n    \"to\": \"$userId\",\r\n\r\n   \"messages\": [{\r\n\r\n  \"type\": \"text\",\r\n\r\n    \"text\": \"รอก่อนน่ะครับ เรายังไม่มีข้อมูล\"\r\n\r\n    }]\r\n\r\n}",
+            CURLOPT_POSTFIELDS => "{\r\n\r\n    \"to\": \"001\",\r\n\r\n   \"messages\": [{\r\n\r\n  \"type\": \"text\",\r\n\r\n    \"text\": \"รอก่อนน่ะครับ เรายังไม่มีข้อมูล\"\r\n\r\n    }]\r\n\r\n}",
             CURLOPT_HTTPHEADER => array(
                 "authorization: Bearer WjJsHEahu/7iJXa8DlecFlJC1DF2v0fo/zSq021dKV7gGi7bFbJUpgNMlZrqr0micMTrey7ATNPRYWSxEFYFr8YRW/Z4slHq+xln9jMtzbAT2hb8TvvG8t9dxv5xGWEAqhVTNISmngMT9AiBLGYycwdB04t89/1O/w1cDnyilFU=",
                 "cache-control: no-cache",
