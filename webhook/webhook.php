@@ -7,7 +7,7 @@ $json = file_get_contents('php://input');
 $request = json_decode($json, true);
 
 $queryText = $request["queryResult"]["queryText"];
-$action = $request["queryResult"]["action"];
+//$action = $request["queryResult"]["action"];
 $userId = $request['originalDetectIntentRequest']['payload']['data']['source']['userId'];
 /*$myfile = fopen("log$date.txt", "a") or die("Unable to open file!");
 $log = $date . "-" . $time . "\t" . $userId . "\t" . $queryText . "\n" . $c . "\n";
@@ -19,7 +19,7 @@ $input = fopen("log_json.txt", "w") or die("Unable to open file!");
 fwrite($input, $json);
 fclose($input);*/
 
-switch ($action) {
+//switch ($action) {
 
    /* case "input.unknown": //input.unknown
         /*$name = $_REQUEST['name'];
@@ -70,7 +70,7 @@ switch ($action) {
         } else {
         }
         break;*/
-    default:
+   // default:
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://api.line.me/v2/bot/message/push",
@@ -92,5 +92,5 @@ switch ($action) {
         $response = curl_exec($curl);
         $err = curl_error($curl);
         curl_close($curl);
-}
+//}
 ?>
