@@ -1,7 +1,7 @@
 <?php
 
 function processMessage($input) {
-    $action = $input["result"]["action"];
+    //$action = $input["result"]["action"];
    /* switch($action){
 
         case 'getNews':
@@ -24,7 +24,7 @@ function sendMessage($parameters) {
     echo $data;
 }
 $input = json_decode(file_get_contents('php://input'), true);
-if (isset($input["result"]["action"])) {
+//if (isset($input["result"]["action"])) {
     processMessage($input);
-}
+//}
 ?>
