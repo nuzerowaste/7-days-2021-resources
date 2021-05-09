@@ -10,12 +10,22 @@ function processMessage($input) {
             break;
 
         default :*/
-            sendMessage(array(
+           /* sendMessage(array(
                 "source" => "RMC",
                 "speech" => "I am not able to understand. what do you want ?",
                 "displayText" => "I am not able to understand. what do you want ?",
                 "contextOut" => array()
-            ));
+            ));*/
+    sendMessage (array(
+        "payload" => array(
+            "line" => array(
+                "originalContentUrl"=> "https://nuzerowaste.github.io/7-days-2021-resources/mp3/v37ElMA5g2Y.mp3",
+                "type"=> "audio",
+                "duration"=> 32000
+            )
+        )
+    ));
+
   //  }
 }
 function sendMessage($parameters) {
