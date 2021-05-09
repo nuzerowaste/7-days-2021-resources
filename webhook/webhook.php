@@ -1,4 +1,3 @@
-////////////////////// code webhook //////////
 <?php
 error_reporting(0);
 date_default_timezone_set("Asia/Bangkok");
@@ -10,7 +9,7 @@ $request = json_decode($json, true);
 $queryText = $request["queryResult"]["queryText"];
 $action = $request["queryResult"]["action"];
 $userId = $request['originalDetectIntentRequest']['payload']['data']['source']['userId'];
-$myfile = fopen("log$date.txt", "a") or die("Unable to open file!");
+/*$myfile = fopen("log$date.txt", "a") or die("Unable to open file!");
 $log = $date . "-" . $time . "\t" . $userId . "\t" . $queryText . "\n" . $c . "\n";
 
 fwrite($myfile, $log);
@@ -18,12 +17,12 @@ fclose($myfile);
 
 $input = fopen("log_json.txt", "w") or die("Unable to open file!");
 fwrite($input, $json);
-fclose($input);
+fclose($input);*/
 
 switch ($action) {
 
-    case "input.unknown": //input.unknown
-        $name = $_REQUEST['name'];
+   /* case "input.unknown": //input.unknown
+        /*$name = $_REQUEST['name'];
         date_default_timezone_set("Asia/Bangkok");
         $serverName = "host";
         $userName = "username";
@@ -70,7 +69,7 @@ switch ($action) {
             }
         } else {
         }
-        break;
+        break;*/
     default:
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -84,7 +83,7 @@ switch ($action) {
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => "{\r\n\r\n    \"to\": \"$userId\",\r\n\r\n   \"messages\": [{\r\n\r\n  \"type\": \"text\",\r\n\r\n    \"text\": \"รอก่อนน่ะครับ เรายังไม่มีข้อมูล\"\r\n\r\n    }]\r\n\r\n}",
             CURLOPT_HTTPHEADER => array(
-                "authorization: Bearer line_token",
+                "authorization: Bearer WjJsHEahu/7iJXa8DlecFlJC1DF2v0fo/zSq021dKV7gGi7bFbJUpgNMlZrqr0micMTrey7ATNPRYWSxEFYFr8YRW/Z4slHq+xln9jMtzbAT2hb8TvvG8t9dxv5xGWEAqhVTNISmngMT9AiBLGYycwdB04t89/1O/w1cDnyilFU=",
                 "cache-control: no-cache",
                 "content-type: application/json",
                 "postman-token: 7f766920-b207-53c4-6059-6d20ceec77ea",
